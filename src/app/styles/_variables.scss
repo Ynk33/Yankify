@@ -1,0 +1,57 @@
+/*
+  COLORS
+*/
+
+$white: #fdfffc;
+$background: #FFE6E8;
+$background-alt: #DAD2D8;
+$black: #011627;
+$primary: #2ec4b6;
+$secondary: #e71d36;
+$ternary: #ff9f1c;
+
+/*
+  COLOR SET
+*/
+$color-primary: $primary;
+$color-secondary: $secondary;
+$color-ternary: $ternary;
+
+$color-background: $background;
+$color-nav: $white;
+
+$color-text-primary: $black;
+$color-text-secondary: $primary;
+$color-hover: $primary;
+$color-active: $white;
+$color-active-home: $ternary;
+
+$opacity-light: 0.7;
+$opacity-extra-light: 0.4;
+
+/*
+  BREAK-POINTS
+*/
+$tablet: 992px;
+$mobile: 576px;
+
+/*
+  SIZING
+*/
+
+$nav-height: 70px;
+$mobile-nav-height: calc($nav-height * 1.5);
+$mobile-logo-height: 60px;
+
+$footer-height: 10vh;
+
+$section-min-height: calc(100vh - $nav-height);
+$last-section-height: calc(90vh - $nav-height);
+
+/*
+  EXPORT
+*/
+:export {
+  tablet: $tablet;
+  mobile: $mobile;
+}

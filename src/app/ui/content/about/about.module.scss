@@ -1,0 +1,68 @@
+.content {
+  position: relative;
+  text-align: justify;
+
+  .header {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .text {
+      flex: 2 0 0px;
+
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+  
+      h1 {
+        font-size: 3em;
+      }
+    
+      h3 {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+    }
+
+    .picture {
+      flex: 1 0 0px;
+      position: relative;
+
+      div {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        margin: auto;
+
+        border: solid 5px $color-ternary;
+        border-radius: 100%;
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          max-width: initial;
+        }
+      }
+    }
+  }
+
+  p {
+    font-size: 1.3em;
+    text-align: justify;
+  }
+}
+
+@include tablet() {
+  .content {
+    text-align: center;
+
+    .header {
+      flex-flow: column;
+      justify-content: center;
+    }
+  }
+}

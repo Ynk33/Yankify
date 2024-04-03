@@ -1,0 +1,29 @@
+.footer {
+  height: $footer-height;
+
+  background-color: $black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+
+  overflow: hidden;
+
+  p {
+    color: $white;
+    text-align: right;
+  }
+}
+
+@include tablet {
+  .footer {
+
+    flex-flow: column;
+
+    p, div {
+      text-align: center;
+      width: 100%;
+    }
+  }
+}

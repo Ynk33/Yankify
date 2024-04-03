@@ -1,0 +1,42 @@
+section.fixed {
+  min-height: 0;
+  height: $section-min-height;
+  
+  & > div {
+    flex-grow: 1;
+  }
+}
+
+section {
+  &.neutral {
+    background-color: $white;
+  }
+  
+  &.colored {
+    background-color: $background;
+  }
+
+  &.alt {
+    background-color: $background-alt;
+  }
+}
+
+.snapScrollContainer {
+
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-snap-type: y proximity;
+
+  & > section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    scroll-margin-top: $nav-height;
+  }
+}
+
+@include tablet() {
+  section.fixed {
+    height: auto;
+  }
+}

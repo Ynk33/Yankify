@@ -1,0 +1,41 @@
+body {
+  background-color: $color-background;
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $color-text-primary;
+}
+
+a:hover {
+  color: $color-hover;
+}
+
+main {
+  & > div > section {
+
+    min-height: $section-min-height;
+
+    display: flex;
+    flex-direction: column;
+
+    &:last-of-type {
+      min-height: $last-section-height;
+    }
+
+    /* Sections' titles */
+    h2 {
+      padding: 5px 10%;
+      background-color: $color-ternary;
+      color: $white;
+      font-size: 2em;
+    }
+
+  }
+}

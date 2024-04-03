@@ -1,0 +1,103 @@
+.container {
+  background-color: $color-nav;
+  position: sticky;
+  z-index: 100;
+  top: 0px;
+  height: $nav-height;
+
+  &::after {
+    display: block;
+    content: ' ';
+    width: 100%;
+    height: 10px;
+    background-color: $color-ternary;
+  }
+
+  .navbar {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 80%;
+    margin: auto;
+
+    nav {
+      flex-grow: 2;
+      min-height: $nav-height;
+
+      ul {
+        display: flex;
+        height: 100%;
+
+        li {
+          list-style-type: none;
+        
+          margin: 0 10px;
+          height: 100%;
+          width: 25%;
+          line-height: $nav-height;
+          text-align: center;
+
+          cursor: pointer;
+
+          &:hover a {
+            color: $color-hover;
+          }
+
+          
+          &:has(a.active) {
+            background-color: $color-ternary;
+          }
+
+          a {
+            font-size: 1.3em;
+            
+            &.active {
+              color: $color-active;
+              font-size: 1.5em;
+              text-decoration: none;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include tablet() {
+
+  .container {
+    height: $mobile-nav-height;
+
+    .navbar {
+      align-items: center;
+
+      nav {
+        min-height: initial;
+        height: calc($mobile-nav-height - $mobile-logo-height);
+        width: 100%;
+
+        ul li {
+          line-height: calc($mobile-nav-height - $mobile-logo-height);
+        }
+      }
+    }
+  }
+}
+
+@include mobile() {
+  .container {
+    .navbar {
+      width: 100%;
+    }
+  }
+}
+
+/*
+  EXPORTS
+*/
+:export {
+  navHeight: $nav-height;
+}

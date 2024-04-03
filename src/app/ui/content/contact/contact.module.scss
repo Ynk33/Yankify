@@ -1,0 +1,116 @@
+.formWrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  h1 {
+    font-size: 3em;
+  }
+
+  p {
+    font-size: 1.3em;
+    text-align: justify;
+  }
+
+  form {
+
+    width: 75%;
+    margin: 15px auto;
+
+    display: flex;
+    flex-flow: column;
+
+    padding: 30px;
+    border: solid 1px black;
+
+    div {
+
+      display: flex;
+      flex-flow: column;
+      width: 100%;
+
+      label {
+        &:has(+ input:focus, + textarea:focus) {
+          font-weight: bold;
+        }
+      }
+
+      input, textarea {
+        border: none;
+        border-bottom: solid 2px rgba($black, 0.9);
+        background-color: transparent;
+
+        font-size: 1.3em;
+        color: $black;
+
+        margin-bottom: 20px;
+
+        &:placeholder-shown {
+          color: rgba($black, 0.5);
+          border-color: rgba($black, 0.3);
+        }
+
+        &:hover {
+          border-color: rgba($black, 0.9);
+        }
+
+        &:focus {
+          outline: none;
+          border-color: rgba($black, 1);
+        }
+      }
+    }
+
+    input[type="submit"] {
+      background-color: $white;
+      border: solid 1px $black;
+
+      &:hover, &:focus {
+        background-color: $primary;
+        outline: solid 1px $black;
+      }
+
+      &:active {
+        background-color: $ternary;
+        outline: none;
+      }
+    }
+  }
+}
+
+.socialMedia {
+
+  width: 75%;
+  min-width: 250px;
+  margin: auto;
+
+  hr {
+    width: 50%;
+    margin: 30px auto;
+  }
+
+  p {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  .links {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20px;
+  }
+}
+
+@include tablet() {
+  .formWrapper form {
+    width: 100%;
+  }
+
+  .socialMedia {
+    width: 100%;
+  }
+}

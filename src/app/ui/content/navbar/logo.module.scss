@@ -1,0 +1,42 @@
+.logoWrapper {
+
+  flex-grow: 3;
+
+  div {
+    width: 300px;
+
+
+    h1 {
+      text-align: right;
+      letter-spacing: 0.1em;
+      line-height: 0.9;
+      font-size: 2.6em;
+    }
+
+    p {
+      color: $color-text-secondary;
+      text-align: right;
+      line-height: 0.5;
+      font-size: 1em;
+    }
+  }
+}
+
+@include tablet() {
+  .logoWrapper {
+    height: $mobile-logo-height;
+    width: 100%;
+
+    div {
+      width: 100%;
+
+      h1 {
+        padding-top: 5px;
+      }
+
+      h1, p {
+        text-align: center;
+      }
+    }
+  }
+}
