@@ -1,11 +1,11 @@
 import styles from "@/app/ui/content/highlights/highlights.module.scss";
 
-import { Galleries } from "@/app/lib/definitions";
-import { fetchHighlights } from "@/app/lib/wordpress-api";
+import { Galleries } from "ydl-react-components";
+import { WordpressAPI } from "ydl-react-components";
 import HighlightsCarousel from "@/app/ui/content/highlights/highlights-carousel";
 
 export default async function Highlights() {
-  const highlights: Galleries = await fetchHighlights();
+  const highlights: Galleries = await WordpressAPI.getInstance().fetchHighlights();
 
   return (
     <section id="highlights" className={styles.fixed}>

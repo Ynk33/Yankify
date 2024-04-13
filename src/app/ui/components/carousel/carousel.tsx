@@ -2,14 +2,10 @@
 
 import styles from "@/app/ui/components/carousel/carousel.module.scss";
 
-import { Picture } from "@/app/lib/definitions";
-import Image from "next/image";
+import { Picture } from "ydl-react-components";
 import CarouselNav from "@/app/ui/components/carousel/carousel-nav";
 import { useCallback, useEffect, useRef, useState } from "react";
-import useScrollingNavigation, {
-  Direction,
-} from "@/app/lib/useScrollingNavigation";
-import useAutoPlay from "@/app/lib/useAutoPlay";
+import { useScrollingNavigation, useRepeatingCallback, Direction } from "ydl-react-components";
 import CarouselArrow, {
   Direction as ArrowDirection,
 } from "@/app/ui/components/carousel/carousel-arrow";
@@ -76,7 +72,7 @@ export default function Carousel(props: CarouselProps) {
   );
 
   // Autoplay behaviour
-  useAutoPlay(
+  useRepeatingCallback(
     5000,
     props.autoPlay
       ? () => {

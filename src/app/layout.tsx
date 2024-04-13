@@ -1,10 +1,10 @@
 import "@/styles/reset.scss";
 import "@/styles/globals.scss";
 import { primaryFont } from "@/app/fonts";
-import { fetchMetadata } from "@/app/lib/wordpress-api";
+import { WordpressAPI } from "ydl-react-components";
 
 export async function generateMetadata() {
-  const metadata = await fetchMetadata();
+  const metadata = await WordpressAPI.getInstance().fetchMetadata();
 
   return {
     title: metadata.title,

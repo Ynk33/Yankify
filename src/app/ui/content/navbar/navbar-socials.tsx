@@ -1,6 +1,6 @@
 import styles from "@/app/ui/content/navbar/navbar-socials.module.scss";
 
-import { SocialMedia } from "@/app/lib/definitions";
+import { SocialMedia } from "ydl-react-components";
 import SocialMediaComponent from "@/app/ui/components/social-media/social-media-component";
 
 export default function NavbarSocials({socialMedia} : {socialMedia: SocialMedia}) {

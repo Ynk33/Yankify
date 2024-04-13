@@ -1,4 +1,4 @@
-import { fetchContact, fetchMenu, fetchSettings } from "@/app/lib/wordpress-api";
+import { WordpressAPI } from "ydl-react-components";
 import Logo from "@/app/ui/content/navbar/logo";
 import Navbar from "@/app/ui/content/navbar/navbar";
 import NavbarSocials from "@/app/ui/content/navbar/navbar-socials";
@@ -6,9 +6,9 @@ import NavbarSocials from "@/app/ui/content/navbar/navbar-socials";
 import styles from "@/app/ui/content/navbar/navbar.module.scss";
 
 export default async function NavbarWrapper() {
-  const settings = await fetchSettings();
-  const menu = await fetchMenu();
-  const contact = await fetchContact();
+  const settings = await WordpressAPI.getInstance().fetchSettings();
+  const menu = await WordpressAPI.getInstance().fetchMenu();
+  const contact = await WordpressAPI.getInstance().fetchContact();
 
   return (
     <div id="navbar" className={styles.container}>

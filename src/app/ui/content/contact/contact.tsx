@@ -7,12 +7,12 @@ import { secondaryFont } from "@/app/fonts";
 import Wide2Columns, {
   Layout,
 } from "@/app/ui/components/layouts/wide-2-columns/wide-2-columns";
-import { Contact } from "@/app/lib/definitions";
-import useScrollAnimation from "@/app/lib/useScrollAnimation";
+import { Contact as ContactProps } from "ydl-react-components";
+import { useScrollVisiblityObserver } from "ydl-react-components";
 import ContactSocialMedia from "@/app/ui/content/contact/contact-social-media";
 
-export default function Contact({ contact }: { contact: Contact }) {
-  useScrollAnimation("." + styles.formWrapper, styles.animate);
+export default function Contact({ contact }: { contact: ContactProps }) {
+  useScrollVisiblityObserver("." + styles.formWrapper, styles.animate);
 
   return (
     <section id="contact" className={styles.alt}>

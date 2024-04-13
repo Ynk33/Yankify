@@ -2,7 +2,7 @@ import styles from "@/app/ui/components/carousel/carousel.module.scss";
 
 import { Fill } from "@/app/ui/components/carousel/carousel";
 import Image from "next/image";
-import { Picture } from "@/app/lib/definitions";
+import { Picture } from "ydl-react-components";
 import { primaryFont, secondaryFont } from "@/app/fonts";
 
 export default function CarouselItem({

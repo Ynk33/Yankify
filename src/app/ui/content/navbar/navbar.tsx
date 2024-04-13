@@ -2,11 +2,12 @@
 
 import styles from "@/app/ui/content/navbar/navbar.module.scss";
 
-import { Menu } from "@/app/lib/definitions";
+import { Menu } from "ydl-react-components";
 import NavbarItem from "@/app/ui/content/navbar/navbar-item";
-import useScrollingNavigation, {
+import {
   Direction,
-} from "@/app/lib/useScrollingNavigation";
+  useScrollingNavigation,
+} from "ydl-react-components";
 import { useCallback, useEffect, useState } from "react";
 
 export default function Navbar({ menu }: { menu: Menu }) {

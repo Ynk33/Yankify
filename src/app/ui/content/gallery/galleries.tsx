@@ -1,10 +1,10 @@
 import styles from "@/app/ui/content/gallery/gallery.module.scss";
 
-import { fetchGalleries } from "@/app/lib/wordpress-api";
+import { WordpressAPI } from "ydl-react-components";
 import Gallery from "@/app/ui/content/gallery/gallery";
 
 export default async function Galleries() {
-  const galleries = await fetchGalleries();
+  const galleries = await WordpressAPI.getInstance().fetchGalleries();
 
   return (
     <section id="galleries" className={styles.neutral}>

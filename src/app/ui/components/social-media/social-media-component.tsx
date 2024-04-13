@@ -1,6 +1,6 @@
 import styles from "@/app/ui/components/social-media/social-media-component.module.scss";
 
-import { SocialMedia } from "@/app/lib/definitions";
+import { SocialMedia } from "ydl-react-components";
 import SocialButton, { SocialNetworks } from "@/app/ui/components/social-media/social-button";
 
 export default function SocialMediaComponent({

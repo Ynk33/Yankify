@@ -2,15 +2,15 @@
 
 import styles from "@/app/ui/content/gallery/gallery.module.scss";
 
-import { Gallery } from "@/app/lib/definitions";
+import { Gallery as GalleryProps } from "ydl-react-components";
 import Carousel, { Fill } from "@/app/ui/components/carousel/carousel";
 import GalleryItem from "@/app/ui/content/gallery/gallery-item";
 import Modal from "@/app/ui/components/modal/modal";
 import { useState } from "react";
 import { secondaryFont } from "@/app/fonts";
-import useScrollAnimation from "@/app/lib/useScrollAnimation";
+import { useScrollVisiblityObserver } from "ydl-react-components";
 
-export default function Gallery({ content }: { content: Gallery }) {
+export default function Gallery({ content }: { content: GalleryProps }) {
   const pictures = content.acf.photo_gallery.pictures[0];
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -25,7 +25,7 @@ export default function Gallery({ content }: { content: Gallery }) {
     setIsModalOpen(false);
   };
 
-  useScrollAnimation(
+  useScrollVisiblityObserver(
     "." + styles.galleryTitle,
     styles.animate
   );

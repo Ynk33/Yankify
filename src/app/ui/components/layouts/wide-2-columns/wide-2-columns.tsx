@@ -2,10 +2,10 @@
 
 import styles from "@/app/ui/components/layouts/wide-2-columns/wide-2-columns.module.scss";
 
-import { Picture } from "@/app/lib/definitions";
+import { Picture } from "ydl-react-components";
 import { ReactNode } from "react";
 import Image from "next/image";
-import useScrollAnimation from "@/app/lib/useScrollAnimation";
+import { useScrollVisiblityObserver } from "ydl-react-components";
 
 export enum Layout {
   PictureFirst,
@@ -26,7 +26,7 @@ export default function Wide2Columns({
   animate?: boolean;
 }) {
 
-  useScrollAnimation(
+  useScrollVisiblityObserver(
     "." + styles.picture + " img",
     animate ? styles.animate : ""
   )
