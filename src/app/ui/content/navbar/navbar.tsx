@@ -2,12 +2,8 @@
 
 import styles from "@/app/ui/content/navbar/navbar.module.scss";
 
-import { Menu } from "ydl-react-components";
+import { Menu, Direction, useScrollingNavigation } from "ydl-react-components";
 import NavbarItem from "@/app/ui/content/navbar/navbar-item";
-import {
-  Direction,
-  useScrollingNavigation,
-} from "ydl-react-components";
 import { useCallback, useEffect, useState } from "react";
 
 export default function Navbar({ menu }: { menu: Menu }) {
@@ -54,7 +50,7 @@ export default function Navbar({ menu }: { menu: Menu }) {
     if (activeElement === activeSection) {
       setActiveSection("");
     }
-  }, [setActiveSection, activeElement, activeSection])
+  }, [setActiveSection, activeElement, activeSection]);
 
   return (
     <nav>

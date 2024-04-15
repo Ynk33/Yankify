@@ -26,6 +26,8 @@ type CarouselProps = {
   onSelect: (selectedIndex: number) => void;
 };
 
+// TODO: Fix carousel. Something is wrong with the nav. The picture is not always the one selected. Bug occurs on any navigation, dots or arrows...
+
 export default function Carousel(props: CarouselProps) {
   // Store the index of the current displayed picture
   const [activePictureIndex, setActivePictureIndex] = useState(

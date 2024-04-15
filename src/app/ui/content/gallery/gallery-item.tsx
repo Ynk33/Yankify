@@ -1,9 +1,8 @@
 import styles from "@/app/ui/content/gallery/gallery.module.scss";
 
-import { Picture } from "ydl-react-components";
-import { useScrollVisiblityObserver } from "ydl-react-components";
+import { Picture, useScrollVisiblityObserver } from "ydl-react-components";
+import {  } from "ydl-react-components";
 import Image from "next/image";
-import { useEffect } from "react";
 
 export default function GalleryItem({
   picture,

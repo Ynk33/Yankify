@@ -55,3 +55,5 @@ $last-section-height: calc(90vh - $nav-height);
   tablet: $tablet;
   mobile: $mobile;
 }
+
+@import "~ydl-react-components/src/components/_variables.scss";

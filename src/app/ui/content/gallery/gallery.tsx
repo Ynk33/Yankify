@@ -2,13 +2,12 @@
 
 import styles from "@/app/ui/content/gallery/gallery.module.scss";
 
-import { Gallery as GalleryProps } from "ydl-react-components";
+import { Gallery as GalleryProps, useScrollVisiblityObserver } from "ydl-react-components";
 import Carousel, { Fill } from "@/app/ui/components/carousel/carousel";
 import GalleryItem from "@/app/ui/content/gallery/gallery-item";
 import Modal from "@/app/ui/components/modal/modal";
 import { useState } from "react";
 import { secondaryFont } from "@/app/fonts";
-import { useScrollVisiblityObserver } from "ydl-react-components";
 
 export default function Gallery({ content }: { content: GalleryProps }) {
   const pictures = content.acf.photo_gallery.pictures[0];
