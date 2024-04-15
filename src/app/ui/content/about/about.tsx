@@ -3,9 +3,10 @@
 import styles from "@/app/ui/content/about/about.module.scss";
 
 import AboutContent from "@/app/ui/content/about/about-content";
-import Wide2Columns, {
+import {
+  Wide2Columns,
   Layout,
-} from "@/app/ui/components/layouts/wide-2-columns/wide-2-columns";
+} from "ydl-react-components";
 import { About as AboutProps } from "ydl-react-components";
 
 export default function About({ about }: { about: AboutProps }) {

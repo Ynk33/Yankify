@@ -4,11 +4,9 @@ import styles from "@/app/ui/content/contact/contact.module.scss";
 
 import ContactForm from "@/app/ui/content/contact/contact-form";
 import { secondaryFont } from "@/app/fonts";
-import Wide2Columns, {
-  Layout,
-} from "@/app/ui/components/layouts/wide-2-columns/wide-2-columns";
 import { Contact as ContactProps } from "ydl-react-components";
 import { useScrollVisiblityObserver } from "ydl-react-components";
+import { Wide2Columns, Layout } from "ydl-react-components";
 import ContactSocialMedia from "@/app/ui/content/contact/contact-social-media";
 
 export default function Contact({ contact }: { contact: ContactProps }) {
