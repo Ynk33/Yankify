@@ -6,16 +6,18 @@ import { Picture } from "ydl-react-components";
 import { primaryFont, secondaryFont } from "@/app/fonts";
 
 export default function CarouselItem({
+  id,
   picture,
   fill,
   showCaption = false,
 }: {
+  id: string;
   picture: Picture;
   fill: Fill;
   showCaption?: boolean
 }) {
   return (
-    <div className={styles.carouselItem} id={picture.id.toString()}>
+    <div className={styles.carouselItem} id={id}>
       <div
         className={styles.background}
         style={{ backgroundImage: `url(${picture.full_image_url})` }}

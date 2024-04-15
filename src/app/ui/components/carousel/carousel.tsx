@@ -4,7 +4,7 @@ import styles from "@/app/ui/components/carousel/carousel.module.scss";
 
 import { Picture } from "ydl-react-components";
 import CarouselNav from "@/app/ui/components/carousel/carousel-nav";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { useScrollingNavigation, useRepeatingCallback, Direction } from "ydl-react-components";
 import CarouselArrow, {
   Direction as ArrowDirection,
@@ -26,8 +26,6 @@ type CarouselProps = {
   onSelect: (selectedIndex: number) => void;
 };
 
-// TODO: Fix carousel. Something is wrong with the nav. The picture is not always the one selected. Bug occurs on any navigation, dots or arrows...
-
 export default function Carousel(props: CarouselProps) {
   // Store the index of the current displayed picture
   const [activePictureIndex, setActivePictureIndex] = useState(
@@ -37,9 +35,11 @@ export default function Carousel(props: CarouselProps) {
   // Reference to the InnerCarousel div
   const innerCarouselRef = useRef(null);
 
+  const uniqueId = useId();
+
   // List the pictures' IDs
   const picturesIds = props.pictures.map((picture) => {
-    return picture.id.toString();
+    return uniqueId + picture.id.toString();
   });
 
   // Scroll to next picture
@@ -69,7 +69,7 @@ export default function Carousel(props: CarouselProps) {
   useScrollingNavigation(
     getInnerCarouselRef,
     picturesIds,
-    props.pictures[props.activeIndex].id.toString(),
+    uniqueId + props.pictures[props.activeIndex].id.toString(),
     Direction.x
   );
 
@@ -99,6 +99,7 @@ export default function Carousel(props: CarouselProps) {
         {props.pictures.map((picture: Picture) => {
           return (
             <CarouselItem
+              id={uniqueId + picture.id}
               key={picture.id}
               picture={picture}
               fill={props.fill ?? Fill.Cover}
