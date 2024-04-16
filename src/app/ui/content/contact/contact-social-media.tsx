@@ -1,8 +1,7 @@
 import styles from "@/app/ui/content/contact/contact.module.scss";
 
-import { SocialMedia } from "ydl-react-components";
+import { SocialMedia, SocialMediaComponent } from "ydl-react-components";
 import { secondaryFont } from "@/app/fonts";
-import SocialMediaComponent from "@/app/ui/components/social-media/social-media-component";
 
 export default function ContactSocialMedia({
   social_media,
