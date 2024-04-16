@@ -1,5 +1,6 @@
-import { primaryFont, secondaryFont } from "@/app/fonts";
 import styles from "@/app/ui/content/navbar/logo.module.scss";
+
+import { FontProvider } from "ydl-react-components";
 
 export default function Logo({
   title,
@@ -8,6 +9,8 @@ export default function Logo({
   title: string;
   description: string;
 }) {
+  const primaryFont = FontProvider.PrimaryFont;
+  const secondaryFont = FontProvider.SecondaryFont;
   return (
     <div className={styles.logoWrapper}>
       <div>

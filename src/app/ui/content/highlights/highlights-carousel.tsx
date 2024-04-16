@@ -1,7 +1,6 @@
 "use client";
 
-import { Galleries } from "ydl-react-components";
-import Carousel from "@/app/ui/components/carousel/carousel";
+import { Galleries, Carousel } from "ydl-react-components";
 
 import { useState } from "react";
 

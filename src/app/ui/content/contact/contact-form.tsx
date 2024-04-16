@@ -1,6 +1,8 @@
-import { secondaryFont } from "@/app/fonts";
+import { FontProvider } from "ydl-react-components";
 
 export default function ContactForm() {
+  const secondaryFont = FontProvider.SecondaryFont;
+  
   return (
     <form>
       <div>
