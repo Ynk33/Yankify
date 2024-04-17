@@ -18,12 +18,13 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@/styles/*": ["./src/app/styles/*"],
+      "@/*": ["./*"],
+      "@/errors/*": ["./app/errors/*"],
+      "@/styles/*": ["./app/styles/*"],
       "@/public/*" : ["./public/*"],
-      "@/fonts": ["./src/app/styles/fonts.tsx"]
+      "@/fonts": ["./app/styles/fonts.tsx"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "../ydl-react-components/src/lib/fonts/ClientFontInitializer.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

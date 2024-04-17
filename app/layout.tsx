@@ -5,7 +5,7 @@ import { FontProvider, ClientFontInitializer, WordpressAPI } from "ydl-react-com
 import { primaryFont, secondaryFont } from "@/app/styles/fonts";
 
 export async function generateMetadata() {
-  const metadata = await WordpressAPI.getInstance().fetchMetadata();
+  const metadata = await WordpressAPI.fetchMetadata();
 
   return {
     title: metadata.title,

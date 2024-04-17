@@ -6,9 +6,9 @@ import NavbarSocials from "@/app/ui/content/navbar/navbar-socials";
 import styles from "@/app/ui/content/navbar/navbar.module.scss";
 
 export default async function NavbarWrapper() {
-  const settings = await WordpressAPI.getInstance().fetchSettings();
-  const menu = await WordpressAPI.getInstance().fetchMenu();
-  const contact = await WordpressAPI.getInstance().fetchContact();
+  const settings = await WordpressAPI.fetchSettings();
+  const menu = await WordpressAPI.fetchMenu();
+  const contact = await WordpressAPI.fetchContact();
 
   return (
     <div id="navbar" className={styles.container}>

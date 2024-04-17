@@ -3,8 +3,8 @@ import styles from "@/app/ui/content/footer/footer.module.scss";
 import { WordpressAPI, SocialMediaComponent } from "ydl-react-components";
 
 export default async function Footer() {
-  const footer = await WordpressAPI.getInstance().fetchFooter();
-  const contact = await WordpressAPI.getInstance().fetchContact();
+  const footer = await WordpressAPI.fetchFooter();
+  const contact = await WordpressAPI.fetchContact();
 
   return (
     <div className={styles.footer}>

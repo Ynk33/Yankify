@@ -4,7 +4,7 @@ import { WordpressAPI } from "ydl-react-components";
 import Gallery from "@/app/ui/content/gallery/gallery";
 
 export default async function Galleries() {
-  const galleries = await WordpressAPI.getInstance().fetchGalleries();
+  const galleries = await WordpressAPI.fetchGalleries();
 
   return (
     <section id="galleries" className={styles.neutral}>
