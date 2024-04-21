@@ -10,8 +10,8 @@ export default function GalleryItem({
   picture: Picture;
   onclick: () => void;
 }) {
-  const width = picture.media_details.sizes.large.width * 0.5;
-  const height = picture.media_details.sizes.large.height * 0.5;
+  const width = picture.media_details.sizes.large.width;
+  const height = picture.media_details.sizes.large.height;
 
   const url = picture.full_image_url;
 
