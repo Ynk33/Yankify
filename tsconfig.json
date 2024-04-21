@@ -19,7 +19,6 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@/errors/*": ["./app/errors/*"],
       "@/styles/*": ["./app/styles/*"],
       "@/public/*" : ["./public/*"],
       "@/fonts": ["./app/styles/fonts.tsx"]

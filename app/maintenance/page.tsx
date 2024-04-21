@@ -1,4 +1,4 @@
-import style from "@/errors/errors.module.scss";
+import style from "@/styles/errors.module.scss";
 
 export default function Page() {
   return (
