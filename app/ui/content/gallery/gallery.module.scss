@@ -5,17 +5,8 @@
   font-size: 1.5em;
   word-wrap: inherit;
 
-  width: 10%;
-  height: 46px;
-  opacity: 0;
-  transform: translateX(-50%);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out, width 0.5s ease-out;
-
-  &.animate {
-    width: 100%;
-    opacity: 1;
-    transform: translateX(0%);
-  }
+  width: 100%;
+  opacity: 1;
 }
 
 .gallery {
@@ -34,9 +25,9 @@
     position: relative;
 
     img {
-      opacity: 0;
+      opacity: 1;
       filter: brightness(80%);
-      transition: filter 0.2s, transform 1s, opacity 1s ease-out;
+      transition: filter 0.2s;
 
       cursor: pointer;
 
@@ -48,12 +39,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, 0%);
-
-      &.animate {
-        opacity: 1;
-        transform: translate(-50%, -50%);
-      }
+      transform: translate(-50%, -50%);
       
       &:hover {
         filter: brightness(100%);

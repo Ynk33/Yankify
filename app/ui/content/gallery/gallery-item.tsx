@@ -1,6 +1,4 @@
-import styles from "@/app/ui/content/gallery/gallery.module.scss";
-
-import { Picture, useScrollVisiblityObserver } from "ydl-react-components";
+import { Picture } from "ydl-react-components";
 import Image from "next/image";
 
 export default function GalleryItem({
@@ -14,11 +12,6 @@ export default function GalleryItem({
   const height = picture.media_details.sizes.large.height;
 
   const url = picture.full_image_url;
-
-  useScrollVisiblityObserver(
-    "#picture" + picture.id.toString(),
-    styles.animate,
-  );
 
   return (
     <div>

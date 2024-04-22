@@ -3,7 +3,7 @@
 import styles from "@/app/ui/content/gallery/gallery.module.scss";
 
 import { useState } from "react";
-import { Gallery as GalleryProps, Carousel, Fill, Modal, useScrollVisiblityObserver, FontProvider } from "ydl-react-components";
+import { Gallery as GalleryProps, Carousel, Fill, Modal, FontProvider } from "ydl-react-components";
 import GalleryItem from "@/app/ui/content/gallery/gallery-item";
 
 export default function Gallery({ content }: { content: GalleryProps }) {
@@ -22,11 +22,6 @@ export default function Gallery({ content }: { content: GalleryProps }) {
   const hideModal = () => {
     setIsModalOpen(false);
   };
-
-  useScrollVisiblityObserver(
-    "." + styles.galleryTitle,
-    styles.animate
-  );
 
   return (
     <section>
