@@ -2,8 +2,8 @@
 
 import styles from "@/app/ui/content/gallery/gallery.module.scss";
 
-import { useState } from "react";
-import { Gallery as GalleryProps, Carousel, Fill, Modal, FontProvider } from "ydl-react-components";
+import { useEffect, useState } from "react";
+import { Gallery as GalleryProps, Carousel, Fill, Modal, FontProvider, useWindowDimensions } from "ydl-react-components";
 import GalleryItem from "@/app/ui/content/gallery/gallery-item";
 
 export default function Gallery({ content }: { content: GalleryProps }) {
@@ -13,8 +13,14 @@ export default function Gallery({ content }: { content: GalleryProps }) {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [displayCarousel, setDisplayCarousel] = useState(true);
+
+  const { width } = useWindowDimensions();
+  const mobileWidth = Number.parseInt(styles.mobile.substring(0, styles.mobile.length - 2));
 
   const showModal = (selectedIndex: number) => {
+    if (!displayCarousel) return;
+
     setActiveIndex(selectedIndex);
     setIsModalOpen(true);
   };
@@ -22,6 +28,16 @@ export default function Gallery({ content }: { content: GalleryProps }) {
   const hideModal = () => {
     setIsModalOpen(false);
   };
+  
+  function handleResize() {
+    setDisplayCarousel(width > mobileWidth);
+  }
+
+  // Toggle the carousel depending on the current window width
+  useEffect(() => {
+    setDisplayCarousel(width > mobileWidth);
+  }, [width, mobileWidth]);
+
 
   return (
     <section>
@@ -35,6 +51,7 @@ export default function Gallery({ content }: { content: GalleryProps }) {
               key={picture.id}
               picture={picture}
               onclick={() => showModal(i)}
+              interactable={displayCarousel}
             />
           );
         })}

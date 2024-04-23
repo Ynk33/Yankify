@@ -46,6 +46,16 @@
         transition: filter 0.2s, transform 0.2s ease-in-out;
         transform: translate(-50%, -50%) scale(1.1);
       }
+
+      &.disabled {
+        filter: brightness(100%);
+        cursor: initial;
+
+        &:hover {
+          transition: none;
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
     }
   }
 }
