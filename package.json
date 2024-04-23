@@ -3,11 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "clean": "rimraf .next",
+    "lint": "next lint",
+
+    "predev": "npm run clean",
     "dev": "dotenv -e .env.development -- cross-var next dev -p %PORT%",
+
+    "prebuild": "npm run clean",
     "build": "next build",
     "postbuild": "next-sitemap",
-    "start": "dotenv -- cross-var next start -p %PORT%",
-    "lint": "next lint"
+
+    "start": "dotenv -- cross-var next start -p %PORT%"
   },
   "dependencies": {
     "cross-var": "^1.1.0",
@@ -24,6 +30,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
+    "rimraf": "^5.0.5",
     "sass": "^1.71.1",
     "typescript": "^5"
   }
