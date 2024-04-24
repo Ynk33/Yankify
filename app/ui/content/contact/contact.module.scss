@@ -58,22 +58,62 @@
           outline: none;
           border-color: rgba($black, 1);
         }
+
+        &:disabled {
+          color: rgba($black, 0.5);
+          border-color: rgba($black, 0.3);
+        }
       }
     }
 
-    input[type="submit"] {
+    button[type="submit"] {
       background-color: $white;
       border: solid 1px $black;
 
-      &:hover, &:focus {
-        background-color: $primary;
-        outline: solid 1px $black;
+      &:not([disabled]) {
+        &:hover, &:focus {
+          background-color: $primary;
+          outline: solid 1px $black;
+        }
+  
+        &:active {
+          background-color: $ternary;
+          outline: none;
+        }
       }
 
-      &:active {
-        background-color: $ternary;
-        outline: none;
+      &:disabled {
+        background-color: rgba($white, 0.5);
+        border: solid 1px transparent;
       }
+    }
+  }
+
+  .message {
+    background-color: transparent;
+    border: none;
+
+    padding: 10px 20px;
+    margin-top: 10px;
+
+    text-align: center;
+
+    display: none;
+
+    &.success {
+      display: initial;
+
+      color: darkGreen;
+      background-color: rgba(green, 0.1);
+      border: solid 1px darkGreen;
+    }
+  
+    &.error {
+      display: initial;
+
+      color: darkRed;
+      background-color: rgba(red, 0.1);
+      border: solid 1px darkRed;
     }
   }
 }
