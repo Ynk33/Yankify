@@ -1,5 +1,5 @@
 import { FormEvent, useRef, useState } from "react";
-import { ContactMessageResponse, FontProvider, useAlert } from "ydl-react-components";
+import { ContactMessageResponse, useAlert, useFonts } from "ydl-react-components";
 
 export default function ContactForm({
   sendMessage,
@@ -11,7 +11,7 @@ export default function ContactForm({
 
   const formRef = useRef<HTMLFormElement>(null);
 
-  const secondaryFont = FontProvider.SecondaryFont;
+  const secondaryFont = useFonts().secondaryFont;
 
 
   // Handle form submit: send the POST request and set the proper states.

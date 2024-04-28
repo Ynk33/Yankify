@@ -3,11 +3,11 @@
 import styles from "@/app/ui/content/gallery/gallery.module.scss";
 
 import { useEffect, useState } from "react";
-import { Gallery as GalleryProps, Carousel, Fill, Modal, FontProvider, useWindowDimensions } from "ydl-react-components";
+import { Gallery as GalleryProps, Carousel, Fill, Modal, useWindowDimensions, useFonts } from "ydl-react-components";
 import GalleryItem from "@/app/ui/content/gallery/gallery-item";
 
 export default function Gallery({ content }: { content: GalleryProps }) {
-  const secondaryFont = FontProvider.SecondaryFont;
+  const secondaryFont = useFonts().secondaryFont;
 
   const pictures = content.acf.photo_gallery.pictures[0];
 
@@ -29,10 +29,6 @@ export default function Gallery({ content }: { content: GalleryProps }) {
     setIsModalOpen(false);
   };
   
-  function handleResize() {
-    setDisplayCarousel(width > mobileWidth);
-  }
-
   // Toggle the carousel depending on the current window width
   useEffect(() => {
     setDisplayCarousel(width > mobileWidth);

@@ -3,7 +3,7 @@
 import styles from "@/app/ui/content/about/about.module.scss";
 
 import Image from "next/image";
-import { FontProvider, Picture, useScrollVisiblityObserver } from "ydl-react-components";
+import { Picture, useFonts, useScrollVisiblityObserver } from "ydl-react-components";
 
 export default function AboutContent({
   headline,
@@ -16,7 +16,7 @@ export default function AboutContent({
   htmlContent: string;
   picture: Picture;
 }) {
-  const secondaryFont = FontProvider.SecondaryFont;
+  const secondaryFont = useFonts().secondaryFont;
 
   useScrollVisiblityObserver(
     "." + styles.content,

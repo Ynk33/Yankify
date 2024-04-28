@@ -1,8 +1,8 @@
 import "@/styles/reset.scss";
 import "@/styles/globals.scss";
 
-import { FontProvider, ClientFontInitializer, WordpressAPI } from "ydl-react-components";
-import { primaryFont, secondaryFont } from "@/app/styles/fonts";
+import { WordpressAPI } from "ydl-react-components";
+import { primaryFont } from "@/app/styles/fonts";
 
 export async function generateMetadata() {
   const metadata = await WordpressAPI.fetchMetadata();
@@ -38,18 +38,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Initialize fonts for Server-side components
-  FontProvider.initialize(primaryFont, secondaryFont);
-
   return (
-    <html lang="en" className={FontProvider.PrimaryFont.className}>
-      {/* Initialize fonts for Client-side components */}
-      <ClientFontInitializer
-        primaryFont={primaryFont}
-        secondaryFont={secondaryFont}
-      />
-
-      {/* Body */}
+    <html lang="en" className={primaryFont.className}>
       <body>{children}</body>
     </html>
   );

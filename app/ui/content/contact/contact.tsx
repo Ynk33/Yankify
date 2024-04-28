@@ -7,8 +7,8 @@ import {
   useScrollVisiblityObserver,
   Wide2Columns,
   Layout,
-  FontProvider,
   ContactMessageResponse,
+  useFonts,
 } from "ydl-react-components";
 import ContactForm from "@/app/ui/content/contact/contact-form";
 import ContactSocialMedia from "@/app/ui/content/contact/contact-social-media";
@@ -20,7 +20,7 @@ export default function Contact({
   contact: ContactProps;
   sendMessage: (formData: FormData) => Promise<ContactMessageResponse>;
 }) {
-  const secondaryFont = FontProvider.SecondaryFont;
+  const secondaryFont = useFonts().secondaryFont;
 
   useScrollVisiblityObserver("." + styles.formWrapper, styles.animate);
 
