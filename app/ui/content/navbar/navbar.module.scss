@@ -23,20 +23,22 @@
     margin: auto;
 
     nav {
-      flex-grow: 2;
+      flex-grow: 1;
       min-height: $nav-height;
 
       ul {
         display: flex;
+        flex-direction: row;
+        justify-content: end;
         height: 100%;
         padding: 0;
 
         li {
           list-style-type: none;
         
+          flex: 1 1 0;
           margin: 0;
           height: 100%;
-          width: 25%;
           line-height: $nav-height;
           text-align: center;
 
