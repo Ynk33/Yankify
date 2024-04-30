@@ -58,7 +58,7 @@ export default function Navbar({ menu }: { menu: Menu }) {
         {menu.map((menuItem) => {
           return (
             <NavbarItem
-              key={menuItem.ID}
+              key={menuItem.title}
               onClick={() => setActiveSection(menuItem.url.substring(1))}
               className={
                 activeElement === menuItem.url.substring(1) ? styles.active : ""
