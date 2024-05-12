@@ -5,11 +5,12 @@ import { WordpressAPI } from "ydl-react-components";
 import { primaryFont } from "@/app/styles/fonts";
 
 export async function generateMetadata() {
+  const settings = await WordpressAPI.fetchSettings();
   const metadata = await WordpressAPI.fetchMetadata();
 
   return {
-    title: metadata.title,
-    description: metadata.description,
+    title: settings.name,
+    description: settings.description,
     robots: {
       follow: true,
       index: true,
